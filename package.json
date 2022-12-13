@@ -20,12 +20,8 @@
         "url": "https://github.com/fkstndnjs/TypeScript/issues"
     },
     "homepage": "https://github.com/fkstndnjs/TypeScript#readme",
-    "dependencies": {
-        "typescript": "^4.9.4"
-    },
     "devDependencies": {
         "nodemon": "^2.0.20",
-        "ts-node": "^10.9.1",
         "tsc-watch": "^6.0.0"
     }
 }
