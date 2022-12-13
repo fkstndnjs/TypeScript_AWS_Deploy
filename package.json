@@ -1,0 +1,23 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "Learning Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fkstndnjs/TypeScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fkstndnjs/TypeScript/issues"
+  },
+  "homepage": "https://github.com/fkstndnjs/TypeScript#readme",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
+}
