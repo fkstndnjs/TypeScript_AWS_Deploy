@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "tsc -w & nodemon app.js",
-        "start2": "ts-node app.ts"
+        "start2": "ts-node app.ts",
+        "start3": "nodemon --exec \"ts-node\" app.ts"
     },
     "repository": {
         "type": "git",
@@ -24,6 +25,7 @@
     },
     "devDependencies": {
         "nodemon": "^2.0.20",
-        "ts-node": "^10.9.1"
+        "ts-node": "^10.9.1",
+        "tsc-watch": "^6.0.0"
     }
 }
