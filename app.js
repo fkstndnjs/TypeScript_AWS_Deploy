@@ -1,1 +1,2 @@
-console.log("TypeScript Test");
+"use strict";
+console.log("TypeScript Test 2");
