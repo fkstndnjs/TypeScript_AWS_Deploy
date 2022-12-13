@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/fkstndnjs/TypeScript/issues"
   },
-  "homepage": "https://github.com/fkstndnjs/TypeScript#readme",
-  "devDependencies": {
-    "tsc-watch": "^6.0.0"
-  }
+  "homepage": "https://github.com/fkstndnjs/TypeScript#readme"
 }
