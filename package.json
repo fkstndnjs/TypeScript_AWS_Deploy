@@ -4,7 +4,6 @@
     "description": "Learning Typescript",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "start": "tsc -w & nodemon app.js",
         "start2": "ts-node app.ts",
         "start3": "nodemon --exec \"ts-node\" app.ts",
