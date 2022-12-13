@@ -20,5 +20,8 @@
     "homepage": "https://github.com/fkstndnjs/TypeScript#readme",
     "dependencies": {
         "typescript": "^4.9.4"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20"
     }
 }
