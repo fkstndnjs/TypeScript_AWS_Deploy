@@ -1,6 +1,7 @@
 import express from "express";
 import { body } from "express-validator";
 import validate from "../middleware/validate";
+import * as authController from "./auth.controller";
 
 const authRouter = express.Router();
 const loginValidation = [
@@ -17,7 +18,7 @@ const signupValidation = [
     .withMessage("이메일 형식에 맞지 않습니다."),
 ];
 
-authRouter.post("/signup", signupValidation, signupController);
-authRouter.post("/login", loginValidation, loginController);
+authRouter.post("/signup", signupValidation, authController.signup);
+authRouter.post("/login", loginValidation, authController.login);
 
 export default authRouter;
