@@ -2,6 +2,7 @@ import express, { NextFunction, Request, Response } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import config from "./config";
+import db from "./database";
 import rateLimiter from "./middleware/rateLimiter";
 
 const app = express();
@@ -21,6 +22,8 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   res.status(500).send(err);
 });
 
-app.listen(config.port, () => {
-  console.log("Server On...");
+db.sync().then(() => {
+  app.listen(config.port, () => {
+    console.log("Server On...");
+  });
 });
