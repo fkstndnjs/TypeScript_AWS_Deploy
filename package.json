@@ -3,12 +3,7 @@
   "version": "1.0.0",
   "description": "Learning Typescript",
   "main": "app.js",
-  "scripts": {
-    "start": "tsc -w & nodemon app.js",
-    "start2": "ts-node app.ts",
-    "start3": "nodemon --exec \"ts-node\" app.ts",
-    "start4": "tsc-watch --onSuccess \"node app.js\""
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fkstndnjs/TypeScript.git"
