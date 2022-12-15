@@ -11,6 +11,18 @@ const createJWTToken = (id: number) => {
   return token;
 };
 
-export const signup = (req: Request, res: Response, next: NextFunction) => {};
+export const signup = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { name, username, password, email } = req.body;
+
+  const foundUser = await UserRepository.getByUsername(username);
+
+  if (foundUser) {
+    return res.status(409).send("이미 존재하는 사용자입니다.");
+  }
+};
 
 export const login = (req: Request, res: Response, next: NextFunction) => {};
