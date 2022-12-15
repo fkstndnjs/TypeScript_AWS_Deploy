@@ -10,6 +10,8 @@ const createJWTToken = (id: number) => {
   return token;
 };
 
-export const signup = (req: Request, res: Response, next: NextFunction) => {};
+export const signup = (req: Request, res: Response, next: NextFunction) => {
+  const { name, username, password, email } = req.body;
+};
 
 export const login = (req: Request, res: Response, next: NextFunction) => {};
