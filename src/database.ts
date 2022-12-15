@@ -1,8 +1,14 @@
 import { Sequelize } from "sequelize";
+import config from "./config";
 
-const db = new Sequelize("twitter", "root", "0000", {
-  host: "127.0.0.1",
-  dialect: "mysql",
-});
+const db = new Sequelize(
+  config.db.database,
+  config.db.user,
+  config.db.password,
+  {
+    host: config.db.host,
+    dialect: "mysql",
+  }
+);
 
 export default db;
