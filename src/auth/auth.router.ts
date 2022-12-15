@@ -8,9 +8,16 @@ const loginValidation = [
   body("password").isEmpty().withMessage("비밀번호를 입력해주세요"),
   validate,
 ];
-const signupValidation = [body("username")];
+const signupValidation = [
+  ...loginValidation,
+  body("name").isEmpty().withMessage("이름을 입력해주세요."),
+  body("email")
+    .isEmail()
+    .normalizeEmail()
+    .withMessage("이메일 형식에 맞지 않습니다."),
+];
 
 authRouter.post("/signup", signupController);
-authRouter.post("/login", loginController);
+authRouter.post("/login", loginValidation, loginController);
 
 export default authRouter;
