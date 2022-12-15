@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
+import authRouter from "./auth/auth.router";
 import config from "./config";
 import db from "./database";
 import rateLimiter from "./middleware/rateLimiter";
