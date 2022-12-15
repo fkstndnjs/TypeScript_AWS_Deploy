@@ -2,12 +2,14 @@ import express, { NextFunction, Request, Response } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import config from "./config";
+import rateLimiter from "./middleware/rateLimiter";
 
 const app = express();
 
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(helmet());
+app.use(rateLimiter);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).send("NOT FOUND");
