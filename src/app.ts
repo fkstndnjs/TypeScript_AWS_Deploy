@@ -11,6 +11,8 @@ app.use(morgan("dev"));
 app.use(helmet());
 app.use(rateLimiter);
 
+app.use("/auth");
+
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).send("NOT FOUND");
 });
