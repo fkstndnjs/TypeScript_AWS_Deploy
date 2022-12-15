@@ -13,7 +13,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).send("NOT FOUND");
 });
 
-app.use((err, req: Request, res: Response, next: NextFunction) => {});
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+  res.status(500).send(err);
+});
 
 app.listen(config.port, () => {
   console.log("Server On...");
