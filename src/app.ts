@@ -3,4 +3,6 @@ import config from "./config";
 
 const app = express();
 
-app.listen(config.port);
+app.listen(config.port, () => {
+  console.log("Server On...");
+});
