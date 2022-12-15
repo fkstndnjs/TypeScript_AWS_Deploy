@@ -10,8 +10,10 @@ app.use(morgan("dev"));
 app.use(helmet());
 
 app.use((req: Request, res: Response, next: NextFunction) => {
-  res.status;
+  res.status(404).send("NOT FOUND");
 });
+
+app.use((err, req: Request, res: Response, next: NextFunction) => {});
 
 app.listen(config.port, () => {
   console.log("Server On...");
