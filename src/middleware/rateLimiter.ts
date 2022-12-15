@@ -10,3 +10,5 @@ const rateLimiter = limiter({
     res.status(options.statusCode).send(options.message);
   },
 });
+
+export default rateLimiter;
