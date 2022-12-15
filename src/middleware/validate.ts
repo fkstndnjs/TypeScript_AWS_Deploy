@@ -7,4 +7,10 @@ export default function validate(
   next: NextFunction
 ) {
   const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).send(errors.array().map((error) => error.msg));
+  }
+
+  next();
 }
