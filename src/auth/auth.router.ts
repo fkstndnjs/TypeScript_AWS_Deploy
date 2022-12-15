@@ -17,7 +17,7 @@ const signupValidation = [
     .withMessage("이메일 형식에 맞지 않습니다."),
 ];
 
-authRouter.post("/signup", signupController);
+authRouter.post("/signup", signupValidation, signupController);
 authRouter.post("/login", loginValidation, loginController);
 
 export default authRouter;
