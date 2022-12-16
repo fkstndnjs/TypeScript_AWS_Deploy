@@ -11,6 +11,18 @@ export const getAllTweets = async (
   res.status(200).json(tweets);
 };
 
+export const getTweetById = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { tweetId } = req.params;
+
+  const tweet = await tweetRepository.getTweetById(tweetId);
+
+  res.status(200).json(tweet);
+};
+
 export const createTweet = async (
   req: Request,
   res: Response,
@@ -25,4 +37,17 @@ export const createTweet = async (
   const tweet = await tweetRepository.createTweet({ text, userId });
 
   res.status(201).json(tweet);
+};
+
+export const updateTweet = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { tweetId } = req.params;
+  const { text } = req.body;
+
+  const tweet = await tweetRepository.updateTweet(tweetId, text);
+
+  res.status(200).json(tweet);
 };

@@ -12,6 +12,21 @@ export const getAllTweets = async () => {
   });
 };
 
+export const getTweetById = async (id: string) => {
+  return Tweet.findByPk(id, {
+    attributes: ["id", "text"],
+    include: {
+      model: User,
+      attributes: ["id", "username"],
+    },
+  }).then((data) => {
+    console.log(data);
+    return data?.dataValues;
+  });
+};
+
 export const createTweet = async (tweet: { text: string; userId: string }) => {
   return Tweet.create(tweet).then((data) => data.dataValues);
 };
+
+export const updateTweet = async (tweetId: string, text: string) => {};
