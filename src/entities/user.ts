@@ -18,7 +18,7 @@ const User = db.define(
       type: DataTypes.STRING(100),
       allowNull: false,
     },
-    nickname: {
+    username: {
       type: DataTypes.STRING(100),
       allowNull: false,
     },
