@@ -27,12 +27,16 @@ export const signup = async (
 
   const hashedPassword = await bcrypt.hash(password, config.bcrypt.saltRounds);
 
-  UserRepository.createUser({
+  const user = await UserRepository.createUser({
     name,
     username,
     password: hashedPassword,
     email,
   });
+
+  const token = createJWTToken(user);
+
+  res.status(201).json({ token });
 };
 
 export const login = (req: Request, res: Response, next: NextFunction) => {};

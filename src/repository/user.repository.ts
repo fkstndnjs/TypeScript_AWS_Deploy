@@ -23,5 +23,8 @@ export const createUser = async (user: {
   password: string;
   email: string;
 }) => {
-  User.create(user).then(console.log);
+  return User.create(user).then((data) => {
+    console.log(data);
+    return 1;
+  });
 };
