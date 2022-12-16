@@ -25,7 +25,7 @@ export const signup = async (
     return res.status(409).send("이미 존재하는 사용자입니다.");
   }
 
-  const hashedPassword = bcrpyt;
+  const hashedPassword = await bcrypt.hash();
 };
 
 export const login = (req: Request, res: Response, next: NextFunction) => {};
