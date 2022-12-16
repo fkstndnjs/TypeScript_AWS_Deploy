@@ -25,7 +25,14 @@ export const signup = async (
     return res.status(409).send("이미 존재하는 사용자입니다.");
   }
 
-  const hashedPassword = await bcrypt.hash();
+  const hashedPassword = await bcrypt.hash(password, config.bcrypt.saltRounds);
+
+  UserRepository.createUser({
+    name,
+    username,
+    password: hashedPassword,
+    email,
+  });
 };
 
 export const login = (req: Request, res: Response, next: NextFunction) => {};
