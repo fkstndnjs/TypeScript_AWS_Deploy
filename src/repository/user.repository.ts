@@ -25,7 +25,6 @@ export const createUser = async (user: {
   email: string;
 }) => {
   return User.create(user).then((data) => {
-    console.log(data);
-    return 1;
+    return data.dataValues;
   });
 };
