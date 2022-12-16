@@ -39,6 +39,16 @@ export const signup = async (
   res.status(201).json({ message: `환영합니다, ${user.username}님!`, token });
 };
 
-export const login = (req: Request, res: Response, next: NextFunction) => {
+export const login = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const { username, password } = req.body;
+
+  const foundUser = await UserRepository.getByUsername(username);
+
+  if (!foundUser) {
+    return res.status(401).send("아이디 혹은 비밀번호가 틀렸습니다.");
+  }
 };
