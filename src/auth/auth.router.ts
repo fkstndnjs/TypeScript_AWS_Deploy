@@ -6,7 +6,7 @@ import * as authController from "./auth.controller";
 const authRouter = express.Router();
 const loginValidation = [
   body("username").notEmpty().withMessage("아이디를 입력해주세요."),
-  body("password").notEmpty().withMessage("비밀번호를 입력해주세요"),
+  body("password").notEmpty().withMessage("비밀번호를 입력해주세요."),
   validate,
 ];
 const signupValidation = [
