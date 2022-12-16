@@ -1,5 +1,6 @@
 import express from "express";
+import * as tweetController from "./tweet.controller";
 
 const tweetRouter = express.Router();
 
-tweetRouter.get("/");
+tweetRouter.get("/", tweetController.getAllTweets);
