@@ -25,3 +25,5 @@ const auth = (req: Request, res: Response, next: NextFunction) => {
     return res.status(401).send("토큰이 유효하지 않습니다.");
   }
 };
+
+export default auth;
