@@ -19,7 +19,7 @@ const config = {
     expiresIn: process.env.JWT_EXPIRES_IN!,
   },
   bcrypt: {
-    saltRounds: process.env.BCRYPT_SALT!,
+    saltRounds: parseInt(process.env.BCRYPT_SALT!),
   },
 };
 

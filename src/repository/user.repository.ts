@@ -11,6 +11,7 @@ export const getByUsername = async (username: string) => {
     },
   }).then((data) => {
     console.log(data);
+
     return data?.dataValues;
   });
 
