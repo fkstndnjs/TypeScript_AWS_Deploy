@@ -18,6 +18,9 @@ const config = {
     secretKey: process.env.JWT_SECRET_KEY!,
     expiresIn: process.env.JWT_EXPIRES_IN!,
   },
+  bcrypt: {
+    saltRounds: process.env.BCRYPT_SALT!,
+  },
 };
 
 export default config;
