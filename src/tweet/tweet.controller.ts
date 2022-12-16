@@ -8,5 +8,5 @@ export const getAllTweets = async (
 ) => {
   const tweets = await tweetRepository.getAllTweets();
 
-  return tweets;
+  res.status(200).json(tweets);
 };
