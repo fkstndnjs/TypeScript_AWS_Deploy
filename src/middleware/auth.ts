@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import config from "../config";
 
-const auth = (req: any, res: Response, next: NextFunction) => {
+const auth = (req: Request, res: Response, next: NextFunction) => {
   const authHeader = req.get("Authorization");
 
   if (authHeader && authHeader.startsWith("Bearer ")) {
@@ -16,7 +16,7 @@ const auth = (req: any, res: Response, next: NextFunction) => {
       if (!data) {
         return res.status(401).send("토큰이 유효하지 않습니다.");
       } else {
-        req.userId = data.id;
+        req.headers["userId"] = data.id;
 
         return next();
       }
