@@ -39,4 +39,6 @@ export const signup = async (
   res.status(201).json({ message: `환영합니다, ${user.username}님!`, token });
 };
 
-export const login = (req: Request, res: Response, next: NextFunction) => {};
+export const login = (req: Request, res: Response, next: NextFunction) => {
+  const { username, password } = req.body;
+};
