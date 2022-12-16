@@ -10,10 +10,10 @@ const auth = (req: Request, res: Response, next: NextFunction) => {
 
     const temp = jwt.verify(token, config.jwt.secretKey, (err, data) => {
       if (err) {
-        return res.status(401).send("잘못된 접근입니다.");
+        return res.status(401).send("토큰이 유효하지 않습니다.");
       }
     });
   } else {
-    res.status(401).send("잘못된 접근입니다.");
+    res.status(401).send("토큰이 유효하지 않습니다.");
   }
 };
