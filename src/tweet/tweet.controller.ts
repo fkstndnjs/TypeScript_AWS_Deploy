@@ -21,9 +21,6 @@ export const createTweet = async (
   const { text } = req.body;
 
   const userId = req.headers.userId as string;
-  console.log("🚀 ------------------🚀");
-  console.log("🚀 ~ userId", userId);
-  console.log("🚀 ------------------🚀");
 
   const tweet = await tweetRepository.createTweet({ text, userId });
 
