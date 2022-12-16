@@ -5,4 +5,6 @@ const tweetRouter = express.Router();
 
 tweetRouter.get("/", tweetController.getAllTweets);
 
+tweetRouter.post("/", tweetController.createTweet);
+
 export default tweetRouter;
