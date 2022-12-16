@@ -51,4 +51,14 @@ export const login = async (
   if (!foundUser) {
     return res.status(401).send("아이디 혹은 비밀번호가 틀렸습니다.");
   }
+
+  const compareResult = await bcrypt.compare(password, foundUser.password);
+
+  if (!compareResult) {
+    return res.status(401).send("아이디 혹은 비밀번호가 틀렸습니다.");
+  }
+
+  const token = createJWTToken(foundUser.id);
+
+  res.status(201).json({ message: `환영합니다, ${username}님!`, token });
 };
