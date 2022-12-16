@@ -16,13 +16,16 @@ export const createTweet = async (
   res: Response,
   next: NextFunction
 ) => {
+  console.log(req.headers);
+
   const { text } = req.body;
 
-  const userId = req.get("userId");
+  const userId = req.headers.userId as string;
+  console.log("🚀 ------------------🚀");
+  console.log("🚀 ~ userId", userId);
+  console.log("🚀 ------------------🚀");
 
-  if (userId) {
-    const tweet = await tweetRepository.createTweet({ text, userId });
+  const tweet = await tweetRepository.createTweet({ text, userId });
 
-    res.status(201).json(tweet);
-  }
+  res.status(201).json(tweet);
 };
