@@ -11,3 +11,7 @@ export const getAllTweets = async () => {
     order: [["createdAt", "DESC"]],
   });
 };
+
+export const createTweet = async (tweet: { text: string; userId: number }) => {
+  return Tweet.create(tweet).then((data) => data.dataValues);
+};
