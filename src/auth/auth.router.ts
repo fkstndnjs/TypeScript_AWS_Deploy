@@ -5,13 +5,13 @@ import * as authController from "./auth.controller";
 
 const authRouter = express.Router();
 const loginValidation = [
-  body("username").isEmpty().withMessage("아이디를 입력해주세요."),
-  body("password").isEmpty().withMessage("비밀번호를 입력해주세요"),
+  body("username").notEmpty().withMessage("아이디를 입력해주세요."),
+  body("password").notEmpty().withMessage("비밀번호를 입력해주세요"),
   validate,
 ];
 const signupValidation = [
   ...loginValidation,
-  body("name").isEmpty().withMessage("이름을 입력해주세요."),
+  body("name").notEmpty().withMessage("이름을 입력해주세요."),
   body("email")
     .isEmail()
     .normalizeEmail()
