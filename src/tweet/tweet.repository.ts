@@ -29,4 +29,23 @@ export const createTweet = async (tweet: { text: string; userId: string }) => {
   return Tweet.create(tweet).then((data) => data.dataValues);
 };
 
-export const updateTweet = async (tweetId: string, text: string) => {};
+export const updateTweet = async (tweetId: string, text: string) => {
+  Tweet.update(
+    {
+      text,
+    },
+    {
+      where: {
+        id: tweetId,
+      },
+    }
+  );
+};
+
+export const deleteTweet = async (tweetId: string) => {
+  Tweet.destroy({
+    where: {
+      id: tweetId,
+    },
+  });
+};

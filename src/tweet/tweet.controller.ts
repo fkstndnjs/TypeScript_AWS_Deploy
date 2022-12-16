@@ -28,8 +28,6 @@ export const createTweet = async (
   res: Response,
   next: NextFunction
 ) => {
-  console.log(req.headers);
-
   const { text } = req.body;
 
   const userId = req.headers.userId as string;
@@ -47,7 +45,19 @@ export const updateTweet = async (
   const { tweetId } = req.params;
   const { text } = req.body;
 
-  const tweet = await tweetRepository.updateTweet(tweetId, text);
+  await tweetRepository.updateTweet(tweetId, text);
 
-  res.status(200).json(tweet);
+  res.status(200).send("트윗이 수정되었습니다.");
+};
+
+export const deleteTweet = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { tweetId } = req.params;
+
+  await tweetRepository.deleteTweet(tweetId);
+
+  res.status(204).send("트윗이 삭제ㅚ었습니다.");
 };
