@@ -16,3 +16,5 @@ const Tweet = db.define("tweet", {
 });
 
 Tweet.belongsTo(User);
+
+export default Tweet;
