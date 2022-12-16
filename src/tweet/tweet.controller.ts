@@ -10,3 +10,13 @@ export const getAllTweets = async (
 
   res.status(200).json(tweets);
 };
+
+export const createTweet = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { text } = req.body;
+
+  const userId = req.get("userId");
+};
