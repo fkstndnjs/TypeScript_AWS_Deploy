@@ -36,7 +36,7 @@ export const signup = async (
 
   const token = createJWTToken(user.id);
 
-  res.status(201).json({ message: `환영합니다, ${user.username}님!`, token });
+  res.status(201).json({ message: `회원가입이 완료되었습니다!`, token });
 };
 
 export const login = async (
