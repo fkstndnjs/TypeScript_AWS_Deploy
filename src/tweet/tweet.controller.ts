@@ -19,4 +19,10 @@ export const createTweet = async (
   const { text } = req.body;
 
   const userId = req.get("userId");
+
+  if (userId) {
+    const tweet = await tweetRepository.createTweet({ text, userId });
+
+    res.status(201).json(tweet);
+  }
 };

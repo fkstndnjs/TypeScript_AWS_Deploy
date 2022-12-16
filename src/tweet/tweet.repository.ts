@@ -12,6 +12,6 @@ export const getAllTweets = async () => {
   });
 };
 
-export const createTweet = async (tweet: { text: string; userId: number }) => {
+export const createTweet = async (tweet: { text: string; userId: string }) => {
   return Tweet.create(tweet).then((data) => data.dataValues);
 };
