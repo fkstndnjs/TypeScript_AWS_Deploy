@@ -59,5 +59,5 @@ export const deleteTweet = async (
 
   await tweetRepository.deleteTweet(tweetId);
 
-  res.status(204).send("트윗이 삭제ㅚ었습니다.");
+  res.status(204).send("트윗이 삭제되었습니다.");
 };
