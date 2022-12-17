@@ -4,6 +4,7 @@ dotenv.config();
 
 const config = {
   port: parseInt(process.env.PORT!),
+  nodeEnv: process.env.NODE_ENV!,
   rateLimit: {
     windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS!),
     max: parseInt(process.env.RATE_LIMIT_MAX!),
