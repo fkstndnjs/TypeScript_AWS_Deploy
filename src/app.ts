@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
@@ -8,6 +9,8 @@ import rateLimiter from "./middleware/rateLimiter";
 import tweetRouter from "./tweet/tweet.router";
 
 const app = express();
+
+dotenv.config();
 
 app.use(express.json());
 if (config.nodeEnv === "production") {
