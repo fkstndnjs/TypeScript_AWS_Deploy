@@ -4,7 +4,7 @@
   "description": "Learning Typescript",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production PORT=80 tsc && node dist/app.js",
+    "start": "cross-env NODE_ENV=production PORT=80 tsc && pm2 start dist/app.js",
     "dev": "tsc-watch --onSuccess \"node dist/app.js\"",
     "tsconfig": "tsc --init"
   },
