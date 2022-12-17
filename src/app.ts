@@ -10,7 +10,11 @@ import tweetRouter from "./tweet/tweet.router";
 const app = express();
 
 app.use(express.json());
-app.use(morgan("dev"));
+if (config.nodeEnv === "production") {
+  app.use(morgan("combined"));
+} else {
+  app.use(morgan("dev"));
+}
 app.use(helmet());
 app.use(rateLimiter);
 
