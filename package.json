@@ -4,7 +4,8 @@
   "description": "Learning Typescript",
   "main": "app.js",
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/app.js\"",
+    "start": "NODE_ENV=production PORT=80 ts",
+    "dev": "tsc-watch --onSuccess \"node dist/app.js\"",
     "tsconfig": "tsc --init"
   },
   "repository": {
