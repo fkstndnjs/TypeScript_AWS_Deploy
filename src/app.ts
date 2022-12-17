@@ -11,8 +11,12 @@ const app = express();
 
 app.use(express.json());
 if (config.nodeEnv === "production") {
+  console.log(`config.nodeEnv === "production"`);
+
   app.use(morgan("combined"));
 } else {
+  console.log(`config.nodeEnv === "develop"`);
+
   app.use(morgan("dev"));
 }
 app.use(helmet());
