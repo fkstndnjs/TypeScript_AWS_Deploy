@@ -4,7 +4,7 @@ import * as tweetController from "./tweet.controller";
 
 const tweetRouter = express.Router();
 
-tweetRouter.get("/", auth, tweetController.getAllTweets);
+tweetRouter.get("/", tweetController.getAllTweets);
 
 tweetRouter.get("/:tweetId", auth, tweetController.getTweetById);
 
