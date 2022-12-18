@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "start": "cross-env NODE_ENV=production PORT=80 sudo pm2 start dist/app.js",
+    "start": "cross-env NODE_ENV=production PORT=8080 pm2 start dist/app.js",
     "dev": "tsc-watch --onSuccess \"node dist/app.js\"",
     "tsconfig": "tsc --init"
   },
