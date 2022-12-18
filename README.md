@@ -1,4 +1,4 @@
-> ### 1. AWS에 로그인 (계정이 없다면 회원가입)
+# 1. AWS에 로그인 (계정이 없다면 회원가입)
 
 ![](https://velog.velcdn.com/images/fkstndnjs/post/2e496a9d-3c2e-420e-af36-ff3cf3d904ec/image.png)
 
@@ -6,7 +6,7 @@
 
 ---
 
-> ### 2. AWS 지역(Region) 변경
+# 2. AWS 지역(Region) 변경
 
 현재 AWS 지역이 `버지니아 북부`로 되어있다.
 
@@ -20,7 +20,7 @@
 
 ---
 
-> ### 3. ec2 인스턴스 생성하기
+# 3. ec2 인스턴스 생성하기
 
 1. 콘솔 홈에서 위에 있는 검색창에 `"ec2"`를 검색하여 ec2 서비스 페이지로 이동한다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/91af3c33-f7a8-4cc2-bbe1-721465531b3d/image.png)
@@ -64,7 +64,7 @@
 
 ---
 
-> ### 4. RDS 생성하기
+# 4. RDS 생성하기
 
 1. ec2 때와 마찬가지로 검색창에 `"rds"`를 검색하여 RDS 서비스 페이지로 이동한다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/96b5b075-4081-4ce6-a960-6156a6de7a9f/image.png)
@@ -106,7 +106,7 @@
 
 ---
 
-> ### 5. 터미널에서 SSH로 ec2 연결
+# 5. 터미널에서 SSH로 ec2 연결
 
 1. ec2 서비스 페이지로 이동하여 인스턴스 목록을 확인한다. 그리고 위에서 생성한 인스턴스의 ID를 클릭하여 인스턴스 상세 페이지로 이동한다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/cb056bea-b37b-482e-b167-af65ddbf13e7/image.png)
@@ -126,7 +126,7 @@
 
 ---
 
-> ### 6. DBeaver와 RDS 연결
+# 6. DBeaver와 RDS 연결
 
 1. DBeaver를 실행한다(없으면 DBeaver를 설치해주자).
 ![](https://velog.velcdn.com/images/fkstndnjs/post/d3596c01-8d8a-41fc-82f5-7ee9af0ed8d1/image.png)
@@ -164,20 +164,20 @@
 
 ---
 
-6. `"Test Connection"` 버튼을 눌러 RDS와의 연결을 테스트한다.
+7. `"Test Connection"` 버튼을 눌러 RDS와의 연결을 테스트한다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/84ff4b78-f212-4bf1-941f-bdf6ac7c6201/image.png)
 ![](https://velog.velcdn.com/images/fkstndnjs/post/c898e6aa-97ad-40f6-89d0-c18ed9ee09f0/image.png)
 
 ---
 
-7. `"완료"` 버튼을 눌러 설정을 끝내고 새로 연결된 RDS를 더블클릭 하여 연결해준 뒤 데이터베이스 목록을 확인한다. 아직 생성한 데이터베이스가 없기 때문에 `sys`를 제외하고는 아무것도 뜨지 않는다.
+8. `"완료"` 버튼을 눌러 설정을 끝내고 새로 연결된 RDS를 더블클릭 하여 연결해준 뒤 데이터베이스 목록을 확인한다. 아직 생성한 데이터베이스가 없기 때문에 `sys`를 제외하고는 아무것도 뜨지 않는다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/85d38d9e-1624-489c-9942-8cfea98e9dcd/image.png)
 ![](https://velog.velcdn.com/images/fkstndnjs/post/07ff03aa-0272-49d0-83fe-3534998ecd28/image.png)
 ![](https://velog.velcdn.com/images/fkstndnjs/post/f09e58ce-7c00-49b7-83a1-7dd27c926fe9/image.png)
 
 ---
 
-8. 데이터베이스 목록에서 오른쪽 마우스를 눌러 `"Create New Database"`를 클릭한 뒤 노드 서버에서 사용할 데이터베이스를 하나 생성한다.
+9. 데이터베이스 목록에서 오른쪽 마우스를 눌러 `"Create New Database"`를 클릭한 뒤 노드 서버에서 사용할 데이터베이스를 하나 생성한다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/6bded363-358d-4d5f-8c27-8868dfac3b81/image.png)
 ![](https://velog.velcdn.com/images/fkstndnjs/post/73e07235-1b8b-4793-8901-32c41a357d33/image.png)
 ![](https://velog.velcdn.com/images/fkstndnjs/post/24ecdd34-07d1-4044-a50b-1190a78d4095/image.png)
@@ -186,7 +186,7 @@
 
 ---
 
-> ### 7. ec2에 Node 설치하기
+# 7. ec2에 Node 설치하기
 
 1. 위에서 ec2 인스턴스와 연결했던 터미널을 준비한다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/013eff06-ce27-4fff-a193-aeaf3ff40ad5/image.png)
@@ -208,14 +208,14 @@
 
 ---
 
-> ### 8. ec2에 Git 설치하기
+# 8. ec2에 Git 설치하기
 
 1. `sudo yum install git -y`를 입력하여 Git을 설치해준다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/25368c35-8769-4a43-a983-ed94de424aa6/image.png)
 
 ---
 
-> ### 9. Git 레포지토리에 있는 폴더 가져오기
+# 9. Git 레포지토리에 있는 폴더 가져오기
 
 1. `git clone`으로 레포지토리를 복사한다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/d532e04c-10e8-45c7-9e68-3a677a47681b/image.png)
@@ -238,14 +238,14 @@
 
 ---
 
-> ### 10. 포트 리디렉션
+# 10. 포트 리디렉션
 
 1. 포트번호를 1024 밑으로 열려고 하면 설정이 복잡하기 때문에 Node 서버를 `8080`포트로 연 뒤 `80`포트로 들어오는 요청들을 `8080` 포트로 리디렉션하여 받을 것이다. 그러기 위해서는 `sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080` 이 명령을 ec2와 연결된 터미널에 입력하면 된다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/e9db0ecb-0fa6-4b71-a0b3-d9ee7d6fe2c1/image.png)
 
 ---
 
-> ### 11. 코드 빌드 후 pm2로 서버 실행
+# 11. 코드 빌드 후 pm2로 서버 실행
 
 1. 설정한 스크립트로 빌드 후 서버를 실행한다.
 ![](https://velog.velcdn.com/images/fkstndnjs/post/7c28ef40-123e-458b-9215-c6f24a2cbfc5/image.png)
@@ -263,7 +263,7 @@
 
 ---
 
-> ### 12. Postman으로 테스트
+# 12. Postman으로 테스트
 
 - host는 ec2의 `퍼블릭 IPv4 주소`를 이용하면 된다.
 - 로컬에서 `http://localhost:8080/tweet` 이런식으로 요청을 보냈었다면, 이제는 `http://{퍼블릭 IPv4 주소}/tweet`로 요청을 보내면 된다.
