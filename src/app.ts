@@ -7,6 +7,7 @@ import config from "./config";
 import db from "./database";
 import rateLimiter from "./middleware/rateLimiter";
 import tweetRouter from "./tweet/tweet.router";
+import cors from "cors";
 
 const app = express();
 
@@ -24,6 +25,7 @@ if (config.nodeEnv === "production") {
 }
 app.use(helmet());
 app.use(rateLimiter);
+app.use(cors());
 
 app.use("/auth", authRouter);
 app.use("/tweet", tweetRouter);
