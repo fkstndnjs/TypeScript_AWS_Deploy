@@ -63,3 +63,9 @@ class Server {
     });
   }
 }
+
+function init() {
+  const server = new Server();
+
+  server.listen();
+}
