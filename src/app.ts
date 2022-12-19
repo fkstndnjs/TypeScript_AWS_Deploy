@@ -10,33 +10,35 @@ import tweetRouter from "./tweet/tweet.router";
 import cors from "cors";
 
 class Server {
-  private app: Express.Application;
+  private app: Express;
 
   constructor() {
     this.app = express();
   }
 
-  private setRouter() {}
+  private setRouter() {
+    this.app.use("/auth", authRouter);
+    this.app.use("/tweet", tweetRouter);
+  }
 
   private setMiddleware() {
-    app.use(express.json());
+    this.app.use(express.json());
     if (config.nodeEnv === "production") {
       console.log(`config.nodeEnv === "production"`);
 
-      app.use(morgan("combined"));
+      this.app.use(morgan("combined"));
     } else {
       console.log(`config.nodeEnv === "develop"`);
 
-      app.use(morgan("dev"));
+      this.app.use(morgan("dev"));
     }
-    app.use(helmet());
-    app.use(rateLimiter);
-    app.use(cors());
+    this.app.use(helmet());
+    this.app.use(rateLimiter);
+    this.app.use(cors());
+
+    this.setRouter();
   }
 }
-
-app.use("/auth", authRouter);
-app.use("/tweet", tweetRouter);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).send("NOT FOUND");
