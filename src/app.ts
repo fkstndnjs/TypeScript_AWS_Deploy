@@ -34,7 +34,6 @@ class Server {
     );
   }
 
-  // 미들웨어
   private setMiddleware() {
     this.app.use(express.json());
     if (config.nodeEnv === "production") {
