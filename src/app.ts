@@ -21,8 +21,6 @@ class Server {
 
 const app = express();
 
-dotenv.config();
-
 app.use(express.json());
 if (config.nodeEnv === "production") {
   console.log(`config.nodeEnv === "production"`);
