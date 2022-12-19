@@ -10,7 +10,7 @@ import tweetRouter from "./tweet/tweet.router";
 import cors from "cors";
 
 class Server {
-  private app: Express.Application;
+  private app;
 
   constructor() {
     this.app = express();
