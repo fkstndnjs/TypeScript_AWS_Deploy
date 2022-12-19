@@ -10,7 +10,7 @@ import tweetRouter from "./tweet/tweet.router";
 import cors from "cors";
 
 class Server {
-  private app: Express;
+  private app: Express.Application;
 
   constructor() {
     this.app = express();
@@ -19,6 +19,16 @@ class Server {
   private setRouter() {
     this.app.use("/auth", authRouter);
     this.app.use("/tweet", tweetRouter);
+  }
+
+  private setErrorHandler() {
+    app.use((req: Request, res: Response, next: NextFunction) => {
+      res.status(404).send("NOT FOUND");
+    });
+
+    app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+      res.status(500).send(err);
+    });
   }
 
   private setMiddleware() {
@@ -37,16 +47,10 @@ class Server {
     this.app.use(cors());
 
     this.setRouter();
+
+    this.setErrorHandler();
   }
 }
-
-app.use((req: Request, res: Response, next: NextFunction) => {
-  res.status(404).send("NOT FOUND");
-});
-
-app.use((err: any, req: Request, res: Response, next: NextFunction) => {
-  res.status(500).send(err);
-});
 
 db.sync().then(() => {
   app.listen(config.port, () => {
