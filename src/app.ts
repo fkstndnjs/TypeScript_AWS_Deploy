@@ -10,7 +10,7 @@ import tweetRouter from "./tweet/tweet.router";
 import cors from "cors";
 
 class Server {
-  private app;
+  private app: express.Application;
 
   constructor() {
     this.app = express();
@@ -22,13 +22,15 @@ class Server {
   }
 
   private setErrorHandler() {
-    app.use((req: Request, res: Response, next: NextFunction) => {
+    this.app.use((req: Request, res: Response, next: NextFunction) => {
       res.status(404).send("NOT FOUND");
     });
 
-    app.use((err: any, req: Request, res: Response, next: NextFunction) => {
-      res.status(500).send(err);
-    });
+    this.app.use(
+      (err: any, req: Request, res: Response, next: NextFunction) => {
+        res.status(500).send(err);
+      }
+    );
   }
 
   private setMiddleware() {
@@ -50,6 +52,8 @@ class Server {
 
     this.setErrorHandler();
   }
+
+  public startServer;
 }
 
 db.sync().then(() => {
