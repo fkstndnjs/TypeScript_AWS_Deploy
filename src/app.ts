@@ -9,6 +9,16 @@ import rateLimiter from "./middleware/rateLimiter";
 import tweetRouter from "./tweet/tweet.router";
 import cors from "cors";
 
+class Server {
+  private app: Express.Application;
+
+  constructor() {
+    this.app = express();
+  }
+
+  private setMiddleware() {}
+}
+
 const app = express();
 
 dotenv.config();
