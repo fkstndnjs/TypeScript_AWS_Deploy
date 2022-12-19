@@ -53,11 +53,13 @@ class Server {
     this.setErrorHandler();
   }
 
-  public startServer;
-}
+  public listen() {
+    this.setMiddleware();
 
-db.sync().then(() => {
-  app.listen(config.port, () => {
-    console.log("Server On...");
-  });
-});
+    db.sync().then(() => {
+      this.app.listen(config.port, () => {
+        console.log("Server On...");
+      });
+    });
+  }
+}
