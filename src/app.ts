@@ -16,24 +16,24 @@ class Server {
     this.app = express();
   }
 
-  private setMiddleware() {}
+  private setMiddleware() {
+    app.use(express.json());
+    if (config.nodeEnv === "production") {
+      console.log(`config.nodeEnv === "production"`);
+
+      app.use(morgan("combined"));
+    } else {
+      console.log(`config.nodeEnv === "develop"`);
+
+      app.use(morgan("dev"));
+    }
+    app.use(helmet());
+    app.use(rateLimiter);
+    app.use(cors());
+  }
 }
 
 const app = express();
-
-app.use(express.json());
-if (config.nodeEnv === "production") {
-  console.log(`config.nodeEnv === "production"`);
-
-  app.use(morgan("combined"));
-} else {
-  console.log(`config.nodeEnv === "develop"`);
-
-  app.use(morgan("dev"));
-}
-app.use(helmet());
-app.use(rateLimiter);
-app.use(cors());
 
 app.use("/auth", authRouter);
 app.use("/tweet", tweetRouter);
