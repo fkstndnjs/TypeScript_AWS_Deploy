@@ -21,7 +21,6 @@ class Server {
     this.app.use("/tweet", tweetRouter);
   }
 
-  // 에러 핸들러
   private setErrorHandler() {
     this.app.use((req: Request, res: Response, next: NextFunction) => {
       res.status(404).send("NOT FOUND");
