@@ -69,3 +69,5 @@ function init() {
 
   server.listen();
 }
+
+init();
