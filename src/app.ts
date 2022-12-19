@@ -16,6 +16,8 @@ class Server {
     this.app = express();
   }
 
+  private setRouter() {}
+
   private setMiddleware() {
     app.use(express.json());
     if (config.nodeEnv === "production") {
@@ -32,8 +34,6 @@ class Server {
     app.use(cors());
   }
 }
-
-const app = express();
 
 app.use("/auth", authRouter);
 app.use("/tweet", tweetRouter);
