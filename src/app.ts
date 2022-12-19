@@ -55,6 +55,7 @@ class Server {
     this.setErrorHandler();
   }
 
+  // DB 연결 & 서버 실행
   public listen() {
     this.setMiddleware();
 
